@@ -271,7 +271,80 @@ game.innerHTML=`
 
 <img src="foto3.jpg">
 
-<button onclick="finalPhoto()">Devam Et</button>
+<button onclick="question6()">Devam Et</button>
+
+`;
+
+}
+
+function question6(){
+
+game.innerHTML=`
+
+<h2>🍷 Anı Dosyası</h2>
+
+<p style="margin:15px 0">
+İlk rakımızı nerede içtik?
+</p>
+
+<button onclick="wrong()">Körfez Restaurant</button>
+<button onclick="question7()">Ali Baba Meyhane</button>
+<button onclick="wrong()">Truva Restaurant</button>
+
+`;
+
+}
+
+function question7(){
+
+game.innerHTML=`
+
+<h2>⚽ Balayı Dosyası</h2>
+
+<p style="margin:15px 0">
+Balayında nereye gittik?
+</p>
+
+<button onclick="wrong()">Kapadokya</button>
+<button onclick="question8()">Galatasaray - Fenerbahçe derbisine</button>
+<button onclick="wrong()">Antalya</button>
+
+`;
+
+}
+
+function question8(){
+
+game.innerHTML=`
+
+<h2>🍺 Maç Akşamları</h2>
+
+<p style="margin:15px 0">
+Maç akşamları ne içeriz?
+</p>
+
+<button onclick="wrong()">Kola</button>
+<button onclick="question9()">Bira</button>
+<button onclick="wrong()">Çay</button>
+
+`;
+
+}
+
+function question9(){
+
+game.innerHTML=`
+
+<h2>❤️ Son Soru</h2>
+
+<p style="margin:15px 0">
+Bu hikâyedeki en değerli şey nedir?
+</p>
+
+<button onclick="wrong()">Şehirler</button>
+<button onclick="wrong()">Fotoğraflar</button>
+<button onclick="finalPhoto()">Anılar</button>
+<button onclick="wrong()">Nox'un mama kabı</button>
 
 `;
 
