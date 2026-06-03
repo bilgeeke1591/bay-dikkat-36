@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bay Dikkat 36</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:linear-gradient(180deg,#0f172a,#1e293b);
+color:white;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.container{
+width:100%;
+max-width:420px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+padding:25px;
+border-radius:20px;
+box-shadow:0 0 30px rgba(0,0,0,.4);
+text-align:center;
+}
+
+img{
+width:100%;
+border-radius:16px;
+margin-bottom:15px;
+}
+
+h1{
+margin-bottom:15px;
+}
+
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:#2563eb;
+color:white;
+font-size:16px;
+margin-top:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+.answer{
+display:block;
+}
+
+.progress{
+height:10px;
+background:#334155;
+border-radius:10px;
+overflow:hidden;
+margin-bottom:15px;
+}
+
+.bar{
+height:100%;
+background:#22c55e;
+width:0%;
+transition:.5s;
+}
+
+#typewriter{
+white-space:pre-wrap;
+min-height:80px;
+text-align:left;
+margin-bottom:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div id="game"></div>
+</div>
+
+<script>
+
+const game = document.getElementById("game");
+
+function typeWriter(element,text,speed=20){
+let i=0;
+element.innerHTML="";
+const timer=setInterval(()=>{
+element.innerHTML += text.charAt(i);
+i++;
+if(i>=text.length){
+clearInterval(timer);
+}
+},speed);
+}
+
+function start(){
+
+game.innerHTML=`
+<img src="polat.jpg">
+
+<h1>🕵️ DOSYA 36-PK</h1>
+
+<div id="typewriter"></div>
+
+<button onclick="question1()">DOSYAYI AÇ</button>
+`;
+
+typeWriter(
+document.getElementById("typewriter"),
+"Bu dosya yalnızca gerçek Bay Dikkat tarafından açılabilir..."
+);
+
+}
+
+function question1(){
+
+game.innerHTML=`
+
+<div class="progress">
+<div class="bar" style="width:20%"></div>
+</div>
+
+<img src="nox.jpg">
+
+<h2>🐕 Nox Güvenlik Sistemi</h2>
+
+<p style="margin:15px 0">
+İlk tanıştığımız şehir?
+</p>
+
+<button class="answer" onclick="question2()">Tekirdağ</button>
+<button class="answer" onclick="wrong()">İstanbul</button>
+<button class="answer" onclick="wrong()">Çanakkale</button>
+
+`;
+
+}
+
+function question2(){
+
+game.innerHTML=`
+
+<div class="progress">
+<div class="bar" style="width:40%"></div>
+</div>
+
+<h2>📍 Zaman Tüneli</h2>
+
+<p style="margin:15px 0">
+İlişkimizin başladığı yer?
+</p>
+
+<button onclick="question3()">Bozcaada</button>
+<button onclick="wrong()">Tekirdağ</button>
+<button onclick="wrong()">İstanbul</button>
+
+`;
+
+}
+
+function question3(){
+
+game.innerHTML=`
+
+<div class="progress">
+<div class="bar" style="width:60%"></div>
+</div>
+
+<h2>📍 Zaman Tüneli</h2>
+
+<p style="margin:15px 0">
+Hikâyemizin devam ettiği şehir?
+</p>
+
+<button onclick="showPhoto1()">Çanakkale</button>
+<button onclick="wrong()">İstanbul</button>
+<button onclick="wrong()">İzmir</button>
+
+`;
+
+}
+
+function showPhoto1(){
+
+game.innerHTML=`
+
+<h2>🎁 Dosya Parçası Kurtarıldı</h2>
+
+<img src="foto1.jpg">
+
+<button onclick="question4()">Devam Et</button>
+
+`;
+
+}
+
+function question4(){
+
+game.innerHTML=`
+
+<img src="nox.jpg">
+
+<h2>🐕 Nox'un Sorgusu</h2>
+
+<p style="margin:15px 0">
+Nox'un en belirgin özelliği?
+</p>
+
+<button onclick="wrong()">Çok havlaması</button>
+<button onclick="showPhoto2()">Kocaman esnemesi</button>
+<button onclick="wrong()">Yüzmesi</button>
+
+`;
+
+}
+
+function showPhoto2(){
+
+game.innerHTML=`
+
+<h2>🎁 Dosya Parçası Kurtarıldı</h2>
+
+<img src="foto2.jpg">
+
+<button onclick="question5()">Devam Et</button>
+
+`;
+
+}
+
+function question5(){
+
+game.innerHTML=`
+
+<h2>🍔 Operasyon Açlık</h2>
+
+<p style="margin:15px 0">
+Polat'ı en hızlı ne mutlu eder?
+</p>
+
+<button onclick="wrong()">Uzun toplantılar</button>
+<button onclick="showPhoto3()">Güzel bir yemek</button>
+<button onclick="wrong()">Trafik</button>
+
+`;
+
+}
+
+function showPhoto3(){
+
+game.innerHTML=`
+
+<h2>🎁 Dosya Parçası Kurtarıldı</h2>
+
+<img src="foto3.jpg">
+
+<button onclick="finalPhoto()">Devam Et</button>
+
+`;
+
+}
+
+function finalPhoto(){
+
+game.innerHTML=`
+
+<h2>❤️ Son Dosya</h2>
+
+<img src="foto4.jpg">
+
+<button onclick="finalScreen()">Dosyayı Tamamla</button>
+
+`;
+
+}
+
+function finalScreen(){
+
+game.innerHTML=`
+
+<h1>🏆 BAY DİKKAT KAZANDINIZ</h1>
+
+<p style="margin-top:20px;line-height:1.8">
+
+Tekirdağ'da tanıştık.<br>
+Hikâyemiz Bozcaada'da başladı.<br>
+İstanbul'dan geçti.<br>
+Şimdi Çanakkale'de devam ediyor.<br><br>
+
+Benim en sevdiğim anıların ortak noktası sensin.<br><br>
+
+İyi ki doğdun sevgilim ❤️
+
+</p>
+
+`;
+
+}
+
+function wrong(){
+alert("Bay Dikkat, tekrar dene 😊");
+}
+
+start();
+
+</script>
+
+</body>
+</html>
